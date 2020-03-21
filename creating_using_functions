@@ -1,0 +1,17 @@
+#!/usr/local/bin/python3.7
+
+def pr_message(message, count=1):
+    message = input("Please enter the message to be printed ")
+    count = input("Please let us know the count ".strip())
+    if count:
+        count = int(count)
+    else:
+        count = 1
+    while count > 0:
+        print(f"{message}")
+        count -= 1
+
+
+message = ''
+count = 1
+pr_message(message, count)

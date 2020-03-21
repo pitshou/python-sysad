@@ -1,0 +1,8 @@
+#!/usr/local/bin/python3.7
+
+import os
+from math import pi
+
+nbr = int(os.getenv("DIGITS", "10"))
+
+print("%.*f" % (nbr, pi))

@@ -1,0 +1,19 @@
+#!/usr/bin/env python3.7
+
+import argparse
+
+parser = argparse.ArgumentParser(description='helps to print a line from a file')
+parser.add_argument('file_name', help='file to be parsed')
+parser.add_argument('line_number', type=int, help='line to be found')
+args = parser.parse_args()
+
+
+try:
+    with open(args.file_name) as f:
+        list = f.readlines()
+        print(list[args.line_number - 1])
+except FileNotFoundError:
+    print(f"File or directory {args.file_name} doesn't exist")
+except IndexError as err:
+    err = "file too short"
+    print(f"{err}")
